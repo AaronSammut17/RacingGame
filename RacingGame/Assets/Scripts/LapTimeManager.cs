@@ -21,7 +21,6 @@ public class LapTimeManager : MonoBehaviour
     {
         // Its counting the millisecands of each frame
         MilliCount += Time.deltaTime * 10;
-
         RawTime += Time.deltaTime;
 
         // Converting the number to string to be able to deisplay it

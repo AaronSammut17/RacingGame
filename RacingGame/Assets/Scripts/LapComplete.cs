@@ -44,13 +44,16 @@ public class LapComplete : MonoBehaviour
             }
 
             MilliDisplay.GetComponent<Text>().text = "" + LapTimeManager.MilliCount;
+            
+            // This Code is here to save the lap time and keeps these numbers
+            // even after you close the game.
+            PlayerPrefs.SetInt ("MinSave", LapTimeManager.MinuteCount);
+            PlayerPrefs.SetInt ("SecSave", LapTimeManager.SecondCount);
+            PlayerPrefs.SetFloat ("MilliSave", LapTimeManager.MilliCount);
         }
         
         // This Code is here to save the lap time and keeps these numbers
         // even after you close the game.
-        PlayerPrefs.SetInt ("MinSave", LapTimeManager.MinuteCount);
-        PlayerPrefs.SetInt ("SecSave", LapTimeManager.SecondCount);
-        PlayerPrefs.SetFloat ("MilliSave", LapTimeManager.MilliCount);
         PlayerPrefs.SetFloat ("RawTime", LapTimeManager.RawTime);
 
         // This code is setting the timer from the script LapTimeManager to 0.

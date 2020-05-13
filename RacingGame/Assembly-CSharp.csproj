@@ -54,7 +54,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraStable.cs" />
+     <Compile Include="Assets\Scripts\CarControlActive.cs" />
      <Compile Include="Assets\Scripts\CarController.cs" />
+     <Compile Include="Assets\Scripts\Countdown.cs" />
      <Compile Include="Assets\Scripts\HalfPointTrigger.cs" />
      <Compile Include="Assets\Scripts\LapComplete.cs" />
      <Compile Include="Assets\Scripts\LapTimeManager.cs" />

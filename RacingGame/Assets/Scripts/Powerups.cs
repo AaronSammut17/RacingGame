@@ -26,7 +26,6 @@ public class Powerups : MonoBehaviour
         
         Debug.Log("power active");
 
-        GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
 
         yield return new WaitForSeconds(duration);
@@ -34,7 +33,10 @@ public class Powerups : MonoBehaviour
         boost.WheelRearLeftCol.motorTorque /= multiplier;
         boost.WheelRearRightCol.motorTorque /= multiplier;
         Debug.Log("power stops");
-        Destroy(gameObject);
+        
+        yield return new WaitForSeconds(duration);
+        
+        GetComponent<Collider>().enabled = true;
         
     }
     

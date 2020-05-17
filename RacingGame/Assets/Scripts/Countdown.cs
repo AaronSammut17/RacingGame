@@ -11,6 +11,7 @@ public class Countdown : MonoBehaviour
     public AudioSource GoAudio;
     public GameObject LapTimer;
     public GameObject CarControl;
+    public AudioSource LvlMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -45,8 +46,10 @@ public class Countdown : MonoBehaviour
         // for now it wont work but after we place the sound we remove it from a comment
         // these will play a sound.
         //GoAudio.Play ();
+        LvlMusic.Play ();
         LapTimer.SetActive (true);
         CarControl.SetActive (true);
+        
 
     }
 

@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\LapComplete.cs" />
      <Compile Include="Assets\Scripts\LapTimeManager.cs" />
      <Compile Include="Assets\Scripts\LoadLapTime.cs" />
+     <Compile Include="Assets\Scripts\LvlManager.cs" />
      <Compile Include="Assets\Scripts\NewController.cs" />
      <Compile Include="Assets\Scripts\Powerups.cs" />
      <Compile Include="Assets\Scripts\WaypointCircuit.cs" />

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarController : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class CarController : MonoBehaviour
     public GameObject FrontRightWheel;
     public GameObject RearLeftWheel;
     public GameObject RearRightWheel;
-
+    
+    public Vector3 centerOfMass;
     public float topSpeed = 250f; //top speed
     public float maxTorque = 200f; //maximum torque applied to wheels
     public float maxSteerAngle = 45f;
@@ -27,10 +29,13 @@ public class CarController : MonoBehaviour
 
     private Rigidbody rb;
     
+    public Text speedo;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();  
+        rb.centerOfMass = centerOfMass;
     }
 
     // Update is called once per frame
@@ -43,9 +48,11 @@ public class CarController : MonoBehaviour
         WheelFrontLeftCol.steerAngle =  maxSteerAngle * Turn;
         WheelFrontRightCol.steerAngle =  maxSteerAngle * Turn;
 
-        currentSpeed = 2 * 22/7 * WheelRearLeftCol.radius * WheelRearLeftCol.rpm * 60 / 1000; //formula for calc speed in km/h
+        currentSpeed = 2 * (22 / 7) * WheelRearLeftCol.radius * WheelRearLeftCol.rpm * 60 / 1000; //formula for calc speed in km/h
+        currentSpeed = Mathf.Round(currentSpeed);
+        speedo.text = currentSpeed + "KM/H";
 
-        if(currentSpeed < topSpeed){
+        if(currentSpeed <= topSpeed){
             WheelRearLeftCol.motorTorque = maxTorque * Forward; //Rear Wheel Drive movement
             WheelRearRightCol.motorTorque = maxTorque * Forward;
             //top speed may not be fully accurate but will attempt to limit the car before set top speed value

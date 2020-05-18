@@ -47,8 +47,6 @@ public class NewController : MonoBehaviour
             if (temp.gameObject.GetInstanceID() != GetInstanceID())
                 waypoint.Add(temp);
         }
-
-      //  Debug.Log(pathList.Count);
     }
 
     // Update is called once per frame
@@ -105,6 +103,7 @@ public class NewController : MonoBehaviour
     {
         currentSpeed = 2 * (22 / 7) * WheelRearLeftCol.radius * WheelRearLeftCol.rpm * 60 / 1000;
         currentSpeed = Mathf.Round(currentSpeed);
+        
 
         if (currentSpeed <= topSpeed)
         {

@@ -50,7 +50,7 @@ public class CarController : MonoBehaviour
 
         currentSpeed = 2 * (22 / 7) * WheelRearLeftCol.radius * WheelRearLeftCol.rpm * 60 / 1000; //formula for calc speed in km/h
         currentSpeed = Mathf.Round(currentSpeed);
-        speedo.text = currentSpeed + "KM/H";
+        speedo.text = currentSpeed + " KM/H";
 
         if(currentSpeed <= topSpeed){
             WheelRearLeftCol.motorTorque = maxTorque * Forward; //Rear Wheel Drive movement

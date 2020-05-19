@@ -13,9 +13,7 @@ public class Powerups : MonoBehaviour
     void OnTriggerEnter (Collider other){
 
         if (other.CompareTag("Player")){
-            
-            StartCoroutine( Pickup(other) );
-            
+            StartCoroutine( Pickup(other) );  
         }
     }
 
@@ -24,7 +22,6 @@ public class Powerups : MonoBehaviour
         boost.WheelRearLeftCol.motorTorque *= multiplier;
         boost.WheelRearRightCol.motorTorque *= multiplier;
         
-        Debug.Log("power active");
 
         GetComponent<Collider>().enabled = false;
 
@@ -32,7 +29,6 @@ public class Powerups : MonoBehaviour
 
         boost.WheelRearLeftCol.motorTorque /= multiplier;
         boost.WheelRearRightCol.motorTorque /= multiplier;
-        Debug.Log("power stops");
         
         yield return new WaitForSeconds(duration);
         

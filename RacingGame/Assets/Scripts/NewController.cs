@@ -120,5 +120,12 @@ public class NewController : MonoBehaviour
             WheelRearRightCol.brakeTorque = decelerationSpeed;
         }
     }
+        public void Respawn()
+    {
+        currentSpeed = 0f;
+        this.transform.position = new Vector3(waypoint[(currentWaypoint-1)].position.x, waypoint[currentWaypoint-1].position.y, waypoint[currentWaypoint-1].position.z);
+        this.transform.rotation = new Quaternion(0,0,0,0);
+        Debug.Log("Opponent Respawned to Waypoint");
+    }
     
 }

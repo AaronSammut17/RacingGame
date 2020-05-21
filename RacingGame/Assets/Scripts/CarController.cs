@@ -31,11 +31,21 @@ public class CarController : MonoBehaviour
     
     public Text speedo;
 
+    public Transform wayPoints;
+    public int currentWaypoint;
+    public float distFromWaypoint;
+    public List<Transform> waypoint;
+    public GameObject cube;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();  
         rb.centerOfMass = centerOfMass;
+
+        waypoint = new List<Transform>();
+
+        getWaypoint();
     }
 
     // Update is called once per frame
@@ -66,6 +76,8 @@ public class CarController : MonoBehaviour
 
     void Update() //called once per frame
     {
+        calcWaypoint();
+
         Quaternion FLq; //rotation of wheel collider
         Vector3 FLv; //position of wheel collider
         WheelFrontLeftCol.GetWorldPose(out FLv, out FLq); //get wheel collider position and rotation
@@ -90,6 +102,41 @@ public class CarController : MonoBehaviour
         RearRightWheel.transform.rotation = RRq;
         RearRightWheel.transform.position = RRv;
 
+    }
+
+    void getWaypoint()
+    {
+        Transform[] childObjects = wayPoints.GetComponentsInChildren<Transform>();
+
+        for (int i = 0; i < childObjects.Length; i++)
+        {
+            Transform temp = childObjects[i];
+            if (temp.gameObject.GetInstanceID() != GetInstanceID())
+                waypoint.Add(temp);
+        }
+    }
+
+    void calcWaypoint()
+    {
+        Vector3 steerVector = transform.InverseTransformPoint(new Vector3(waypoint[currentWaypoint].position.x, transform.position.y, waypoint[currentWaypoint].position.z));
+        
+        if (steerVector.magnitude <= distFromWaypoint)
+        {
+            currentWaypoint++;
+        }
+
+        if (currentWaypoint >= waypoint.Count)
+        {
+            currentWaypoint = 0;
+        }
+    }
+    public void Respawn()
+    {
+        currentSpeed = 0f;
+        this.transform.position = new Vector3(waypoint[(currentWaypoint-1)].position.x, waypoint[currentWaypoint-1].position.y, waypoint[currentWaypoint-1].position.z);
+        //this.transform.position = new Vector3(-66.88f,1.9f,19.8f);
+        this.transform.rotation = new Quaternion(0,0,0,0);
+        Debug.Log("Player Respawned");
     }
 }
 

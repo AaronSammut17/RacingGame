@@ -13,8 +13,14 @@ public class LvlManager : MonoBehaviour
     }
 
     // loading the tracks.
-    public void Track2 () {
+    public void Track1 () {
         SceneManager.LoadScene (2);
+    }
+    public void Track2 () {
+        SceneManager.LoadScene (3);
+    }
+    public void Track3 () {
+        SceneManager.LoadScene (4);
     }
 
 }

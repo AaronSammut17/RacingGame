@@ -9,6 +9,8 @@ public class Powerups : MonoBehaviour
     public float multiplier = 10000000f;
     public float duration = 4f;
 
+    public AudioSource BoostSoundEffect;
+
     
     void OnTriggerEnter (Collider other){
 
@@ -18,9 +20,12 @@ public class Powerups : MonoBehaviour
     }
 
     IEnumerator Pickup(Collider player){
+
+        BoostSoundEffect.Play();
         CarController boost = player.GetComponent<CarController>();
         boost.WheelRearLeftCol.motorTorque *= multiplier;
         boost.WheelRearRightCol.motorTorque *= multiplier;
+        boost.currentSpeed += 20f;
         
 
         GetComponent<Collider>().enabled = false;
@@ -29,6 +34,7 @@ public class Powerups : MonoBehaviour
 
         boost.WheelRearLeftCol.motorTorque /= multiplier;
         boost.WheelRearRightCol.motorTorque /= multiplier;
+        boost.currentSpeed -= 20f;
         
         yield return new WaitForSeconds(duration);
         

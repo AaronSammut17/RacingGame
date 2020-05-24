@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class CarController : MonoBehaviour
 {
+
+    public AudioSource CarAccelerate;
+    public AudioSource CarDecelerate;
+    public AudioSource CarIdle;
+    public AudioSource TireScreech;
+
     public WheelCollider WheelFrontLeftCol; //the wheel coliders
     public WheelCollider WheelFrontRightCol;
     public WheelCollider WheelRearLeftCol;
@@ -51,9 +57,25 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate() //better optimised for physics than Update()
     {
+        CarIdle.Play();
+        
         Forward = Input.GetAxis("Vertical");
         Turn = Input.GetAxis("Horizontal");
         Brake = Input.GetAxis("Jump");
+
+        if(Input.GetKeyDown("up") || Input.GetKeyDown("w")){
+            CarAccelerate.Play();
+        }
+        if(Input.GetKeyDown("down") || Input.GetKeyDown("s")){
+            CarDecelerate.Play();
+        }
+        if(Input.GetKeyUp("up") || Input.GetKeyUp("w")){
+            CarAccelerate.Stop();
+        }
+        if(Input.GetKeyUp("down") || Input.GetKeyUp("s")){
+            CarDecelerate.Stop();
+        }
+        
         
         WheelFrontLeftCol.steerAngle =  maxSteerAngle * Turn;
         WheelFrontRightCol.steerAngle =  maxSteerAngle * Turn;

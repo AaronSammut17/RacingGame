@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LoadLapTime : MonoBehaviour
 {
@@ -16,16 +17,55 @@ public class LoadLapTime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Getting the saved time from the PlayerPrefs
-        MinCount = PlayerPrefs.GetInt ("MinSave");
-        SecCount = PlayerPrefs.GetInt ("SecSave");
-        MilliCount = PlayerPrefs.GetFloat ("MilliSave");
+        // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene ();
+ 
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name;
+ 
+        if (sceneName == "Track1") 
+        {
+            // Getting the saved time from the PlayerPrefs
+            MinCount = PlayerPrefs.GetInt ("MinSaveTrack1");
+            SecCount = PlayerPrefs.GetInt ("SecSaveTrack1");
+            MilliCount = PlayerPrefs.GetFloat ("MilliSaveTrack1");
 
-        // Problem error
-        // and displaying that time.
-        MinDisplay.GetComponent<Text>().text = "" + MinCount + ":";
-		SecDisplay.GetComponent<Text>().text = "" + SecCount + ".";
-		MilliDisplay.GetComponent<Text>().text = "" + MilliCount;
+            // Problem error
+            // and displaying that time.
+            MinDisplay.GetComponent<Text>().text = "" + MinCount + ":";
+            SecDisplay.GetComponent<Text>().text = "" + SecCount + ".";
+            MilliDisplay.GetComponent<Text>().text = "" + MilliCount;
+
+        }
+        else if (sceneName == "Track2")
+        {
+            // Getting the saved time from the PlayerPrefs
+            MinCount = PlayerPrefs.GetInt ("MinSaveTrack2");
+            SecCount = PlayerPrefs.GetInt ("SecSaveTrack2");
+            MilliCount = PlayerPrefs.GetFloat ("MilliSaveTrack2");
+
+            // Problem error
+            // and displaying that time.
+            MinDisplay.GetComponent<Text>().text = "" + MinCount + ":";
+            SecDisplay.GetComponent<Text>().text = "" + SecCount + ".";
+            MilliDisplay.GetComponent<Text>().text = "" + MilliCount;
+
+        }
+        else if (sceneName == "Track3")
+        {
+            // Getting the saved time from the PlayerPrefs
+            MinCount = PlayerPrefs.GetInt ("MinSaveTrack3");
+            SecCount = PlayerPrefs.GetInt ("SecSaveTrack3");
+            MilliCount = PlayerPrefs.GetFloat ("MilliSaveTrack3");
+
+            // Problem error
+            // and displaying that time.
+            MinDisplay.GetComponent<Text>().text = "" + MinCount + ":";
+            SecDisplay.GetComponent<Text>().text = "" + SecCount + ".";
+            MilliDisplay.GetComponent<Text>().text = "" + MilliCount;
+
+        }
+        
     }
 
 }

@@ -25,7 +25,7 @@ public class Countdown : MonoBehaviour
 
         // for now it wont work but after we place the sound we remove it from a comment
         // these will play a sound.
-        //GetReady.Play ();
+        GetReady.Play ();
         CountDown.SetActive (true);
         yield return new WaitForSeconds (1);
         CountDown.SetActive (false);
@@ -45,7 +45,7 @@ public class Countdown : MonoBehaviour
         CountDown.SetActive (false);
         // for now it wont work but after we place the sound we remove it from a comment
         // these will play a sound.
-        //GoAudio.Play ();
+        GoAudio.Play ();
         LvlMusic.Play ();
         LapTimer.SetActive (true);
         CarControl.SetActive (true);

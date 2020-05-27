@@ -17,6 +17,7 @@ public class Countdown : MonoBehaviour
     void Start()
     {
         StartCoroutine (CountStart ());
+                LvlMusic.Play ();
     }
 
     IEnumerator CountStart () {
@@ -46,7 +47,6 @@ public class Countdown : MonoBehaviour
         // for now it wont work but after we place the sound we remove it from a comment
         // these will play a sound.
         GoAudio.Play ();
-        LvlMusic.Play ();
         LapTimer.SetActive (true);
         CarControl.SetActive (true);
         

@@ -9,7 +9,6 @@ public class CarController : MonoBehaviour
     public AudioSource CarAccelerate;
     public AudioSource CarDecelerate;
     public AudioSource CarIdle;
-    public AudioSource TireScreech;
 
     public WheelCollider WheelFrontLeftCol; //the wheel coliders
     public WheelCollider WheelFrontRightCol;
@@ -26,6 +25,7 @@ public class CarController : MonoBehaviour
     public float topSpeed = 250f; //top speed
     public float maxTorque = 200f; //maximum torque applied to wheels
     public float maxSteerAngle = 45f;
+
     public float currentSpeed;
     public float maxBrakeTorque = 2200f;
 
@@ -64,24 +64,21 @@ public class CarController : MonoBehaviour
         Brake = Input.GetAxis("Jump");
 
         if(Input.GetKeyDown("up") || Input.GetKeyDown("w")){
+            CarDecelerate.Stop();
             CarAccelerate.Play();
         }
-        if(Input.GetKeyDown("down") || Input.GetKeyDown("s")){
-            CarDecelerate.Play();
-        }
+
         if(Input.GetKeyUp("up") || Input.GetKeyUp("w")){
             CarAccelerate.Stop();
-        }
-        if(Input.GetKeyUp("down") || Input.GetKeyUp("s")){
-            CarDecelerate.Stop();
-        }
-        
+            CarDecelerate.Play();
+        }      
         
         WheelFrontLeftCol.steerAngle =  maxSteerAngle * Turn;
         WheelFrontRightCol.steerAngle =  maxSteerAngle * Turn;
 
         currentSpeed = 2 * (22 / 7) * WheelRearLeftCol.radius * WheelRearLeftCol.rpm * 60 / 1000; //formula for calc speed in km/h
         currentSpeed = Mathf.Round(currentSpeed);
+        
         speedo.text = currentSpeed + " KM/H";
 
         if(currentSpeed <= topSpeed){
@@ -155,8 +152,8 @@ public class CarController : MonoBehaviour
     public void Respawn()
     {
         currentSpeed = 0f;
-        this.transform.position = new Vector3(waypoint[(currentWaypoint-1)].position.x, waypoint[currentWaypoint-1].position.y, waypoint[currentWaypoint-1].position.z);
-        //this.transform.position = new Vector3(-66.88f,1.9f,19.8f);
+        WheelRearLeftCol.motorTorque = 0;
+        this.transform.position = new Vector3(waypoint[(currentWaypoint-1)].position.x, waypoint[(currentWaypoint-1)].position.y, waypoint[currentWaypoint-1].position.z);
         this.transform.rotation = new Quaternion(0,0,0,0);
         Debug.Log("Player Respawned");
     }

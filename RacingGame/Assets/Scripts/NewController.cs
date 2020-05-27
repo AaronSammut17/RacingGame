@@ -45,7 +45,9 @@ public class NewController : MonoBehaviour
         {
             Transform temp = childObjects[i];
             if (temp.gameObject.GetInstanceID() != GetInstanceID())
+            {
                 waypoint.Add(temp);
+            }
         }
     }
 
@@ -54,7 +56,7 @@ public class NewController : MonoBehaviour
     {
         getSteer();
         Move();
-        
+
         Quaternion FLq; //rotation of wheel collider
         Vector3 FLv; //position of wheel collider
         WheelFrontLeftCol.GetWorldPose(out FLv, out FLq); //get wheel collider position and rotation
@@ -103,7 +105,6 @@ public class NewController : MonoBehaviour
     {
         currentSpeed = 2 * (22 / 7) * WheelRearLeftCol.radius * WheelRearLeftCol.rpm * 60 / 1000;
         currentSpeed = Mathf.Round(currentSpeed);
-        
 
         if (currentSpeed <= topSpeed)
         {
@@ -123,7 +124,8 @@ public class NewController : MonoBehaviour
         public void Respawn()
     {
         currentSpeed = 0f;
-        this.transform.position = new Vector3(waypoint[(currentWaypoint-1)].position.x, waypoint[currentWaypoint-1].position.y, waypoint[currentWaypoint-1].position.z);
+        WheelRearLeftCol.motorTorque = 0;
+        this.transform.position = new Vector3(waypoint[(currentWaypoint-1)].position.x, 3, waypoint[currentWaypoint-1].position.z);
         this.transform.rotation = new Quaternion(0,0,0,0);
         Debug.Log("Opponent Respawned to Waypoint");
     }

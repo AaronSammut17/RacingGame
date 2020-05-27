@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LvlManager : MonoBehaviour
 {
+    
     public void Play () {
         SceneManager.LoadScene (1);
     }

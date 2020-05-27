@@ -35,7 +35,7 @@ public class LapComplete : MonoBehaviour
  
         if (sceneName == "Track1") 
         {
-            Debug.Log("track1");
+            
             // if player makes a lap
             if (other.CompareTag("Player")) {
                 // This will add one when the player passes the finishline
@@ -96,7 +96,7 @@ public class LapComplete : MonoBehaviour
             // if AI makes a lap
             if (other.CompareTag("Opponent")) {
                 AILapsDone += 1;   
-                if (AILapsDone == 3){
+                if (AILapsDone == 9){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
@@ -165,7 +165,7 @@ public class LapComplete : MonoBehaviour
             // if AI makes a lap
             if (other.CompareTag("Opponent")) {
                 AILapsDone += 1;   
-                if (AILapsDone == 3){
+                if (AILapsDone == 9){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
@@ -234,7 +234,7 @@ public class LapComplete : MonoBehaviour
             // if AI makes a lap
             if (other.CompareTag("Opponent")) {
                 AILapsDone += 1;   
-                if (AILapsDone == 3){
+                if (AILapsDone == 9){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;

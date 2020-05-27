@@ -12,31 +12,26 @@ public class RaceFinish : MonoBehaviour
     public GameObject LevelMusic;
     public GameObject CompleteTrig;
     public GameObject LapTime;
-    public GameObject WinMusic;
-    public GameObject LoseMusic;
+    public AudioSource WinMusic;
+    public AudioSource LoseMusic;
     public GameObject WinUI;
     public GameObject LoseUI;
 
     void OnTriggerEnter (Collider other) {
-
+        this.GetComponent<BoxCollider>().enabled = false;
         
-        CarControl.SetActive (false);
-        AICarControl.SetActive (false);
-        CarControl.GetComponent<CarController>().currentSpeed = 0.0f;
-        AICarControl.GetComponent<NewController>().currentSpeed = 0.0f;
-        CarControl.SetActive (true);
-        AICarControl.SetActive (true);
         CompleteTrig.SetActive (false);
         FinishCam.SetActive (true);
         LevelMusic.SetActive (false);
         MainCamera.SetActive (false);
         LapTime.SetActive (false);
         if (other.CompareTag("Player")) {
-            WinMusic.SetActive (true);
+            WinMusic.Play();
             WinUI.SetActive (true);
+            
         }
         if (other.CompareTag("Opponent")) {
-            LoseMusic.SetActive (true);
+            LoseMusic.Play();
             LoseUI.SetActive (true);
         }
         

@@ -44,9 +44,13 @@ public class Countdown : MonoBehaviour
         CountDown.SetActive (true);
         yield return new WaitForSeconds (1);
         CountDown.SetActive (false);
+        CountDown.GetComponent<Text> ().text = "GO";
         // for now it wont work but after we place the sound we remove it from a comment
         // these will play a sound.
         GoAudio.Play ();
+        CountDown.SetActive (true);
+        yield return new WaitForSeconds (1);
+        CountDown.SetActive (false);
         LapTimer.SetActive (true);
         CarControl.SetActive (true);
         

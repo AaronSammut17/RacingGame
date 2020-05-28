@@ -41,7 +41,7 @@ public class LapComplete : MonoBehaviour
                 // This will add one when the player passes the finishline
                 LapsDone += 1;
 
-                if (LapsDone == 3){
+                if (LapsDone == 4){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
@@ -111,7 +111,7 @@ public class LapComplete : MonoBehaviour
                 // This will add one when the player passes the finishline
                 LapsDone += 1;
 
-                if (LapsDone == 3){
+                if (LapsDone == 4){
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
                 }
@@ -180,7 +180,7 @@ public class LapComplete : MonoBehaviour
                 // This will add one when the player passes the finishline
                 LapsDone += 1;
 
-                if (LapsDone == 2){
+                if (LapsDone == 3){
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
                 }

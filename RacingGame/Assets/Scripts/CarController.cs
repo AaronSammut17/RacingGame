@@ -73,10 +73,12 @@ public class CarController : MonoBehaviour
             CarDecelerate.Play();
         }      
         
+
         WheelFrontLeftCol.steerAngle =  maxSteerAngle * Turn;
         WheelFrontRightCol.steerAngle =  maxSteerAngle * Turn;
 
         currentSpeed = 2 * (22 / 7) * WheelRearLeftCol.radius * WheelRearLeftCol.rpm * 60 / 1000; //formula for calc speed in km/h
+      //  rigidSpeed
         currentSpeed = Mathf.Round(currentSpeed);
         
         speedo.text = currentSpeed + " KM/H";
@@ -96,6 +98,10 @@ public class CarController : MonoBehaviour
     void Update() //called once per frame
     {
         calcWaypoint();
+
+        if(Input.GetKeyDown("r")){
+            Respawn();  
+        }
 
         Quaternion FLq; //rotation of wheel collider
         Vector3 FLv; //position of wheel collider
@@ -154,7 +160,7 @@ public class CarController : MonoBehaviour
         currentSpeed = 0f;
         WheelRearLeftCol.motorTorque = 0;
         this.transform.position = new Vector3(waypoint[(currentWaypoint-1)].position.x, waypoint[(currentWaypoint-1)].position.y, waypoint[currentWaypoint-1].position.z);
-        this.transform.rotation = new Quaternion(0,0,0,0);
+        Quaternion respawnFacing = Quaternion.LookRotation(this.transform.position, transform.up);
         Debug.Log("Player Respawned");
     }
 }

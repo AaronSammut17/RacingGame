@@ -42,7 +42,7 @@ public class LapComplete : MonoBehaviour
                 LapsDone += 1;
 
                 if (LapsDone == 4){
-                    
+                    VictoryPoints.points += 1;
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
                 }
@@ -112,6 +112,7 @@ public class LapComplete : MonoBehaviour
                 LapsDone += 1;
 
                 if (LapsDone == 4){
+                    VictoryPoints.points += 2;
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
                 }
@@ -181,6 +182,7 @@ public class LapComplete : MonoBehaviour
                 LapsDone += 1;
 
                 if (LapsDone == 3){
+                    
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
                 }

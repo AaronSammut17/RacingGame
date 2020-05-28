@@ -13,7 +13,9 @@ public class Powerups : MonoBehaviour
 
     
     void OnTriggerEnter (Collider other){
-
+        if (other.CompareTag("Opponent")){
+            StartCoroutine( Pickup(other) );  
+        }
         if (other.CompareTag("Player")){
             StartCoroutine( Pickup(other) );  
         }

@@ -49,10 +49,11 @@ public class Countdown : MonoBehaviour
         // these will play a sound.
         GoAudio.Play ();
         CountDown.SetActive (true);
-        yield return new WaitForSeconds (1);
-        CountDown.SetActive (false);
         LapTimer.SetActive (true);
         CarControl.SetActive (true);
+        yield return new WaitForSeconds (1);
+        CountDown.SetActive (false);
+
         
 
     }

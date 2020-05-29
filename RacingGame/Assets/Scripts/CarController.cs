@@ -78,7 +78,6 @@ public class CarController : MonoBehaviour
         WheelFrontRightCol.steerAngle =  maxSteerAngle * Turn;
 
         currentSpeed = 2 * (22 / 7) * WheelRearLeftCol.radius * WheelRearLeftCol.rpm * 60 / 1000; //formula for calc speed in km/h
-      //  rigidSpeed
         currentSpeed = Mathf.Round(currentSpeed);
         
         speedo.text = currentSpeed + " KM/H";

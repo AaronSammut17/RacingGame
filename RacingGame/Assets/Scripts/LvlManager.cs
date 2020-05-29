@@ -12,6 +12,7 @@ public class LvlManager : MonoBehaviour
     public void MainMenu () {
         SceneManager.LoadScene(0);
     }
+    
 
     // loading the tracks.
     public void Track1 () {

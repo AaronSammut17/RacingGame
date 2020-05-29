@@ -28,6 +28,7 @@ public class NewController : MonoBehaviour
 
     public List<Transform> waypoint;
     private Rigidbody rb;
+    public float rigidSpeed;
     
     void Start()
     {
@@ -57,10 +58,10 @@ public class NewController : MonoBehaviour
         getSteer();
         Move();
 
-        if(rb.IsSleeping()){
+        if(rigidSpeed == 0f){
             Respawn();
         }
-        
+
         Quaternion FLq; //rotation of wheel collider
         Vector3 FLv; //position of wheel collider
         WheelFrontLeftCol.GetWorldPose(out FLv, out FLq); //get wheel collider position and rotation
@@ -108,6 +109,7 @@ public class NewController : MonoBehaviour
     void Move()
     {
         currentSpeed = 2 * (22 / 7) * WheelRearLeftCol.radius * WheelRearLeftCol.rpm * 60 / 1000;
+        rigidSpeed = rb.velocity.magnitude * 3.6f; // velocity of rigidbody in km/h - used for speed detection when vehicle stuck
         currentSpeed = Mathf.Round(currentSpeed);
 
         if (currentSpeed <= topSpeed)

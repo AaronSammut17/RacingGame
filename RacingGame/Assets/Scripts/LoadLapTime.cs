@@ -65,6 +65,20 @@ public class LoadLapTime : MonoBehaviour
             MilliDisplay.GetComponent<Text>().text = "" + MilliCount;
 
         }
+        else if (sceneName == "Track4")
+        {
+            // Getting the saved time from the PlayerPrefs
+            MinCount = PlayerPrefs.GetInt ("MinSaveTrack4");
+            SecCount = PlayerPrefs.GetInt ("SecSaveTrack4");
+            MilliCount = PlayerPrefs.GetFloat ("MilliSaveTrack4");
+
+            // Problem error
+            // and displaying that time.
+            MinDisplay.GetComponent<Text>().text = "" + MinCount + ":";
+            SecDisplay.GetComponent<Text>().text = "" + SecCount + ".";
+            MilliDisplay.GetComponent<Text>().text = "" + MilliCount;
+
+        }
         
     }
 

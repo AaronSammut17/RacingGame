@@ -24,5 +24,8 @@ public class LvlManager : MonoBehaviour
     public void Track3 () {
         SceneManager.LoadScene (4);
     }
+    public void Track4 () {
+        SceneManager.LoadScene (5);
+    }
 
 }

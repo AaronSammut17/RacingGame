@@ -244,5 +244,74 @@ public class LapComplete : MonoBehaviour
                 }
             }  
         }
+    
+        if (sceneName == "Track4") {
+            // if player makes a lap
+            if (other.CompareTag("Player")) {
+                // This will add one when the player passes the finishline
+
+                if (LapsDone == 1){
+                    
+                    RaceFinish.SetActive (true);
+                    LapsDone = 0;
+                }
+                
+                // Problem error
+                RawTime = PlayerPrefs.GetFloat ("RawTimeTrack4");
+                if (LapTimeManager.RawTime <= RawTime) {
+                    // These lines of code will grab the time from the script LapTimeManager
+                    // And it will display them in the best lap time after the player completes a lap.
+                    if (LapTimeManager.SecondCount <= 9) {
+                        SecondDisplay.GetComponent<Text>().text = "0" + LapTimeManager.SecondCount + ".";
+                    }
+                    else {
+                        SecondDisplay.GetComponent<Text>().text = "" + LapTimeManager.SecondCount + ".";
+                    }
+
+                    if (LapTimeManager.MinuteCount <= 9) {
+                        MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.MinuteCount + ":";
+                    }
+                    else {
+                        MinuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.MinuteCount + ":";
+                    }
+
+                    MilliDisplay.GetComponent<Text>().text = "" + LapTimeManager.MilliCount;
+                    
+                    // This Code is here to save the lap time and keeps these numbers
+                    // even after you close the game.
+                    PlayerPrefs.SetInt ("MinSaveTrack4", LapTimeManager.MinuteCount);
+                    PlayerPrefs.SetInt ("SecSaveTrack4", LapTimeManager.SecondCount);
+                    PlayerPrefs.SetFloat ("MilliSaveTrack4", LapTimeManager.MilliCount);
+                }
+                
+                // This Code is here to save the lap time and keeps these numbers
+                // even after you close the game.
+                PlayerPrefs.SetFloat ("RawTimeTrack4", LapTimeManager.RawTime);
+
+                // This code is setting the timer from the script LapTimeManager to 0.
+                LapTimeManager.MinuteCount = 0;
+                LapTimeManager.SecondCount = 0;
+                LapTimeManager.MilliCount = 0;
+                LapTimeManager.RawTime = 0;
+
+                // It will show how many laps the player has done.
+                LapCounter.GetComponent<Text>().text = "" + LapsDone;
+                
+                // This code will switch the triggers
+                HalfLapTrig.SetActive (true);
+                LapCompleteTrig.SetActive (false);
+            }
+
+            // if AI makes a lap
+            if (other.CompareTag("Opponent")) {
+                AILapsDone += 1;   
+                if (AILapsDone == 9){
+                    
+                    RaceFinish.SetActive (true);
+                    LapsDone = 0;
+                
+                }
+            }  
+        }
     }
 }

@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\RaceFinish.cs" />
      <Compile Include="Assets\Scripts\RespawnManager.cs" />
      <Compile Include="Assets\Scripts\Sound.cs" />
+     <Compile Include="Assets\Scripts\UIStory.cs" />
      <Compile Include="Assets\Scripts\VictoryPoints.cs" />
      <Compile Include="Assets\Scripts\WaypointScript.cs" />
      <None Include="Assets\Imports\Environment\Art\Fonts\ApacheLicense2.0.txt" />

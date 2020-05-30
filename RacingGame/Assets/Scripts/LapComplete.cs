@@ -249,12 +249,6 @@ public class LapComplete : MonoBehaviour
             // if player makes a lap
             if (other.CompareTag("Player")) {
                 // This will add one when the player passes the finishline
-
-                if (LapsDone == 1){
-                    
-                    RaceFinish.SetActive (true);
-                    LapsDone = 0;
-                }
                 
                 // Problem error
                 RawTime = PlayerPrefs.GetFloat ("RawTimeTrack4");
@@ -300,6 +294,14 @@ public class LapComplete : MonoBehaviour
                 // This code will switch the triggers
                 HalfLapTrig.SetActive (true);
                 LapCompleteTrig.SetActive (false);
+
+                LapsDone += 1;
+                
+                if (LapsDone == 1){
+                    
+                    RaceFinish.SetActive (true);
+                    LapsDone = 0;
+                }
             }
 
             // if AI makes a lap

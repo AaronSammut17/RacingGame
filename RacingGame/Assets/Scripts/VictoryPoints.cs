@@ -19,10 +19,10 @@ public class VictoryPoints : MonoBehaviour
         if (points >= 1){
             track2.GetComponent<Button>().interactable = true;
         }
-        if (points >= 4){
+        if (points >= 3){
             track4.GetComponent<Button>().interactable = true;
         }
-        if (points >= 7){
+        if (points >= 6){
             track3.GetComponent<Button>().interactable = true;
         }
         

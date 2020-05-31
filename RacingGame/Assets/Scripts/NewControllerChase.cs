@@ -23,6 +23,7 @@ public class NewControllerChase : MonoBehaviour
     public GameObject RearRightWheel;
     private Rigidbody rb;
     public float rigidSpeed;
+    public AudioSource SirenAudio;
     public AudioSource WinMusic;
     public GameObject WinUI;
     
@@ -30,6 +31,7 @@ public class NewControllerChase : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = centerOfMass;
+        SirenAudio.Play();
     }
 
     // Update is called once per frame

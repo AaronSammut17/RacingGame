@@ -28,6 +28,11 @@ public class Powerups : MonoBehaviour
         boost.WheelRearLeftCol.motorTorque *= multiplier;
         boost.WheelRearRightCol.motorTorque *= multiplier;
         boost.currentSpeed += 20f;
+
+        CarControllerChase boostChase = player.GetComponent<CarControllerChase>();
+        boostChase.WheelRearLeftCol.motorTorque *= multiplier;
+        boostChase.WheelRearRightCol.motorTorque *= multiplier;
+        boostChase.currentSpeed += 20f;
         
 
         GetComponent<Collider>().enabled = false;
@@ -37,6 +42,10 @@ public class Powerups : MonoBehaviour
         boost.WheelRearLeftCol.motorTorque /= multiplier;
         boost.WheelRearRightCol.motorTorque /= multiplier;
         boost.currentSpeed -= 20f;
+
+        boostChase.WheelRearLeftCol.motorTorque /= multiplier;
+        boostChase.WheelRearRightCol.motorTorque /= multiplier;
+        boostChase.currentSpeed -= 20f;
         
         yield return new WaitForSeconds(duration);
         
@@ -50,7 +59,6 @@ public class Powerups : MonoBehaviour
         boost.WheelRearLeftCol.motorTorque *= multiplier;
         boost.WheelRearRightCol.motorTorque *= multiplier;
         boost.currentSpeed += 20f;
-        
 
         GetComponent<Collider>().enabled = false;
 

@@ -8,6 +8,9 @@ TagManager:
   - Opponent
   - Obstacle
   - Stop
+  - Opponent1
+  - Opponent2
+  - Opponent3
   layers:
   - Default
   - TransparentFX

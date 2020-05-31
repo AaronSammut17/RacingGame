@@ -39,6 +39,9 @@ public class Sound : MonoBehaviour
         if (sceneName == "Track3"){
             Destroy(this.gameObject);
         }
+        if (sceneName == "Track4"){
+            Destroy(this.gameObject);
+        }
     }
     
 }

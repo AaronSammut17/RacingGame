@@ -30,7 +30,15 @@ public class RaceFinish : MonoBehaviour
             WinUI.SetActive (true);
             
         }
-        if (other.CompareTag("Opponent")) {
+        if (other.CompareTag("Opponent1")) {
+            LoseMusic.Play();
+            LoseUI.SetActive (true);
+        }
+        if (other.CompareTag("Opponent2")) {
+            LoseMusic.Play();
+            LoseUI.SetActive (true);
+        }
+        if (other.CompareTag("Opponent3")) {
             LoseMusic.Play();
             LoseUI.SetActive (true);
         }

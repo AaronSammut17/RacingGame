@@ -18,7 +18,9 @@ public class LapComplete : MonoBehaviour
 
     public GameObject LapCounter;
     public int LapsDone = 0;
-    public int AILapsDone = 0;
+    public int AI1LapsDone = 0;
+    public int AI2LapsDone = 0;
+    public int AI3LapsDone = 0;
 
     public float RawTime;
 
@@ -93,13 +95,34 @@ public class LapComplete : MonoBehaviour
                 LapCompleteTrig.SetActive (false);
             }
 
-            // if AI makes a lap
-            if (other.CompareTag("Opponent")) {
-                AILapsDone += 1;   
-                if (AILapsDone == 9){
+            // if AI1 makes a lap
+            if (other.CompareTag("Opponent1")) {
+                AI1LapsDone += 1;   
+                if (AI1LapsDone == 9){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
+                    AI1LapsDone = 0;
+                }
+            }  
+            // if AI2 makes a lap
+            if (other.CompareTag("Opponent2")) {
+                AI2LapsDone += 1;   
+                if (AI1LapsDone == 9){
+                    
+                    RaceFinish.SetActive (true);
+                    LapsDone = 0;
+                    AI2LapsDone = 0;
+                }
+            }  
+            // if AI3 makes a lap
+            if (other.CompareTag("Opponent3")) {
+                AI3LapsDone += 1;   
+                if (AI3LapsDone == 9){
+                    
+                    RaceFinish.SetActive (true);
+                    LapsDone = 0;
+                    AI3LapsDone = 0;
                 }
             }  
         }
@@ -163,16 +186,36 @@ public class LapComplete : MonoBehaviour
                 LapCompleteTrig.SetActive (false);
             }
 
-            // if AI makes a lap
-            if (other.CompareTag("Opponent")) {
-                AILapsDone += 1;   
-                if (AILapsDone == 9){
+            // if AI1 makes a lap
+            if (other.CompareTag("Opponent1")) {
+                AI1LapsDone += 1;   
+                if (AI1LapsDone == 9){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
+                    AI1LapsDone = 0;
                 }
-
             }  
+            // if AI2 makes a lap
+            if (other.CompareTag("Opponent2")) {
+                AI2LapsDone += 1;   
+                if (AI1LapsDone == 9){
+                    
+                    RaceFinish.SetActive (true);
+                    LapsDone = 0;
+                    AI2LapsDone = 0;
+                }
+            }  
+            // if AI3 makes a lap
+            if (other.CompareTag("Opponent3")) {
+                AI3LapsDone += 1;   
+                if (AI3LapsDone == 9){
+                    
+                    RaceFinish.SetActive (true);
+                    LapsDone = 0;
+                    AI3LapsDone = 0;
+                }
+            } 
         }
 
         if (sceneName == "Track3") {
@@ -233,16 +276,36 @@ public class LapComplete : MonoBehaviour
                 LapCompleteTrig.SetActive (false);
             }
 
-            // if AI makes a lap
-            if (other.CompareTag("Opponent")) {
-                AILapsDone += 1;   
-                if (AILapsDone == 9){
+            // if AI1 makes a lap
+            if (other.CompareTag("Opponent1")) {
+                AI1LapsDone += 1;   
+                if (AI1LapsDone == 9){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
-                
+                    AI1LapsDone = 0;
                 }
             }  
+            // if AI2 makes a lap
+            if (other.CompareTag("Opponent2")) {
+                AI2LapsDone += 1;   
+                if (AI1LapsDone == 9){
+                    
+                    RaceFinish.SetActive (true);
+                    LapsDone = 0;
+                    AI2LapsDone = 0;
+                }
+            }  
+            // if AI3 makes a lap
+            if (other.CompareTag("Opponent3")) {
+                AI3LapsDone += 1;   
+                if (AI3LapsDone == 9){
+                    
+                    RaceFinish.SetActive (true);
+                    LapsDone = 0;
+                    AI3LapsDone = 0;
+                }
+            } 
         }
     
         if (sceneName == "Track4") {
@@ -250,6 +313,8 @@ public class LapComplete : MonoBehaviour
             if (other.CompareTag("Player")) {
                 // This will add one when the player passes the finishline
                 
+                    
+                    
                 // Problem error
                 RawTime = PlayerPrefs.GetFloat ("RawTimeTrack4");
                 if (LapTimeManager.RawTime <= RawTime) {
@@ -298,22 +363,42 @@ public class LapComplete : MonoBehaviour
                 LapsDone += 1;
                 
                 if (LapsDone == 1){
-                    
+                    VictoryPoints.points += 3;
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
                 }
             }
 
-            // if AI makes a lap
-            if (other.CompareTag("Opponent")) {
-                AILapsDone += 1;   
-                if (AILapsDone == 9){
+            // if AI1 makes a lap
+            if (other.CompareTag("Opponent1")) {
+                AI1LapsDone += 1;   
+                if (AI1LapsDone == 9){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
-                
+                    AI1LapsDone = 0;
                 }
             }  
+            // if AI2 makes a lap
+            if (other.CompareTag("Opponent2")) {
+                AI2LapsDone += 1;   
+                if (AI1LapsDone == 9){
+                    
+                    RaceFinish.SetActive (true);
+                    LapsDone = 0;
+                    AI2LapsDone = 0;
+                }
+            }  
+            // if AI3 makes a lap
+            if (other.CompareTag("Opponent3")) {
+                AI3LapsDone += 1;   
+                if (AI3LapsDone == 9){
+                    
+                    RaceFinish.SetActive (true);
+                    LapsDone = 0;
+                    AI3LapsDone = 0;
+                }
+            } 
         }
     }
 }

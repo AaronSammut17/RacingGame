@@ -14,7 +14,15 @@ public class RespawnManager : MonoBehaviour
                 playerRespawn.Respawn();
         } 
         
-        if((other.CompareTag("Opponent"))){
+        if((other.CompareTag("Opponent1"))){
+                NewController opponentRespawn = other.GetComponent<NewController>();
+                opponentRespawn.Respawn();
+        }
+        if((other.CompareTag("Opponent2"))){
+                NewController opponentRespawn = other.GetComponent<NewController>();
+                opponentRespawn.Respawn();
+        }
+        if((other.CompareTag("Opponent3"))){
                 NewController opponentRespawn = other.GetComponent<NewController>();
                 opponentRespawn.Respawn();
         }

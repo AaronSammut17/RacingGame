@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaypointScript : MonoBehaviour
 {
+    //used to draw Raycasts for waypoint system & insert into array
     public Color rayColor = Color.white;
     List<Transform> waypoint;
 

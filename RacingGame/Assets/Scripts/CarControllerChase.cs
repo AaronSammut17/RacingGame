@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CarControllerChase : MonoBehaviour
 {
-
+    // player car controller solely for track 4/chase mode
     public AudioSource CarAccelerate;
     public AudioSource CarDecelerate;
     public AudioSource CarIdle;

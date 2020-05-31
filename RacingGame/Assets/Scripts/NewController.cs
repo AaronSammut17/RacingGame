@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewController : MonoBehaviour
 {
-
+    // opponent car controller for tracks 1-3
     public Transform wayPoints;
     public Vector3 centerOfMass;
 
@@ -38,7 +38,7 @@ public class NewController : MonoBehaviour
         getWaypoint();
     }
 
-    void getWaypoint()
+    void getWaypoint() //traverses through array children for waypoint positions
     {
         Transform[] childObjects = wayPoints.GetComponentsInChildren<Transform>();
 
@@ -58,7 +58,7 @@ public class NewController : MonoBehaviour
         getSteer();
         Move();
 
-        if(rigidSpeed == 0f){
+        if(rigidSpeed < 0.001f){
             Respawn();
         }
 
@@ -87,7 +87,7 @@ public class NewController : MonoBehaviour
         RearRightWheel.transform.position = RRv;
     }
 
-    void getSteer()
+    void getSteer() //calculates steering angle required to reach next waypoint
     {
         Vector3 steerVector = transform.InverseTransformPoint(new Vector3(waypoint[currentWaypoint].position.x, transform.position.y, waypoint[currentWaypoint].position.z));
         float newSteer = maxSteerAngle * (steerVector.x / steerVector.magnitude);
@@ -109,7 +109,7 @@ public class NewController : MonoBehaviour
     void Move()
     {
         currentSpeed = 2 * (22 / 7) * WheelRearLeftCol.radius * WheelRearLeftCol.rpm * 60 / 1000;
-        rigidSpeed = rb.velocity.magnitude * 3.6f; // velocity of rigidbody in km/h - used for speed detection when vehicle stuck
+        rigidSpeed = rb.velocity.magnitude * 3.6f; // velocity of rigidbody in km/h - used for accurate speed detection when vehicle stuck
         currentSpeed = Mathf.Round(currentSpeed);
 
         if (currentSpeed <= topSpeed)
@@ -127,7 +127,7 @@ public class NewController : MonoBehaviour
             WheelRearRightCol.brakeTorque = decelerationSpeed;
         }
     }
-        public void Respawn()
+        public void Respawn() //respawn at last completed waypoint
     {
         currentSpeed = 0f;
         WheelRearLeftCol.motorTorque = 0;

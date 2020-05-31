@@ -13,10 +13,10 @@ public class Powerups : MonoBehaviour
 
     
     void OnTriggerEnter (Collider other){
-        if (other.CompareTag("Opponent")){
+        if (other.CompareTag("Opponent")){ //opponent pickup collision
             StartCoroutine( PickupOpponent(other) );  
         }
-        if (other.CompareTag("Player")){
+        if (other.CompareTag("Player")){ //player pickup collision
             StartCoroutine( PickupPlayer(other) );  
         }
     }
@@ -24,38 +24,38 @@ public class Powerups : MonoBehaviour
     IEnumerator PickupPlayer(Collider player){
 
         BoostSoundEffect.Play();
-        CarController boost = player.GetComponent<CarController>();
+        CarController boost = player.GetComponent<CarController>(); //increase in torque and speed for player in tracks 1-3
         boost.WheelRearLeftCol.motorTorque *= multiplier;
         boost.WheelRearRightCol.motorTorque *= multiplier;
         boost.currentSpeed += 20f;
 
-        CarControllerChase boostChase = player.GetComponent<CarControllerChase>();
+        CarControllerChase boostChase = player.GetComponent<CarControllerChase>(); //increase in torque and speed for player in track 4/chase mode
         boostChase.WheelRearLeftCol.motorTorque *= multiplier;
         boostChase.WheelRearRightCol.motorTorque *= multiplier;
         boostChase.currentSpeed += 20f;
         
 
-        GetComponent<Collider>().enabled = false;
+        GetComponent<Collider>().enabled = false; //no-clip obstacles power for player in track 4/chase mode
 
         yield return new WaitForSeconds(duration);
 
-        boost.WheelRearLeftCol.motorTorque /= multiplier;
+        boost.WheelRearLeftCol.motorTorque /= multiplier; //torque and speed increase for player in tracks 1-3 wears off
         boost.WheelRearRightCol.motorTorque /= multiplier;
         boost.currentSpeed -= 20f;
 
-        boostChase.WheelRearLeftCol.motorTorque /= multiplier;
+        boostChase.WheelRearLeftCol.motorTorque /= multiplier; //torque and speed increase for player in track 4/chase mode wears off
         boostChase.WheelRearRightCol.motorTorque /= multiplier;
         boostChase.currentSpeed -= 20f;
         
         yield return new WaitForSeconds(duration);
         
-        GetComponent<Collider>().enabled = true;
+        GetComponent<Collider>().enabled = true; //no-clip for player wears off
         
     }
 
     IEnumerator PickupOpponent(Collider opponent){
 
-        NewController boost = opponent.GetComponent<NewController>();
+        NewController boost = opponent.GetComponent<NewController>(); //increase in torque and speed for opponent in tracks 1-3
         boost.WheelRearLeftCol.motorTorque *= multiplier;
         boost.WheelRearRightCol.motorTorque *= multiplier;
         boost.currentSpeed += 20f;
@@ -64,7 +64,7 @@ public class Powerups : MonoBehaviour
 
         yield return new WaitForSeconds(duration);
 
-        boost.WheelRearLeftCol.motorTorque /= multiplier;
+        boost.WheelRearLeftCol.motorTorque /= multiplier; //torque and speed increase for opponent in tracks 1-3 wears off
         boost.WheelRearRightCol.motorTorque /= multiplier;
         boost.currentSpeed -= 20f;
         
@@ -72,6 +72,7 @@ public class Powerups : MonoBehaviour
         
         GetComponent<Collider>().enabled = true;
         
+        // no boost available for opponent in track 4/chase mode (too overpowered)
     }
     
 }

@@ -6530,7 +6530,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cbb7353230f1f1c4bb962768fbc06b42, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8431,7 +8431,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267152840}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad5af527946a2314683da5992eba6bad, type: 3}
   m_Name: 
@@ -10536,7 +10536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344345238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 103.8, y: 0, z: -2.4}
+  m_LocalPosition: {x: 103.8, y: 0, z: -10.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1764892898}
@@ -15287,7 +15287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524415778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.32901, y: 0, z: -2.3999996}
+  m_LocalPosition: {x: 100.32901, y: 0, z: -10.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1101917457}
@@ -31604,7 +31604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1143211189
 Transform:
   m_ObjectHideFlags: 0
@@ -36015,7 +36015,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318414550}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad5af527946a2314683da5992eba6bad, type: 3}
   m_Name: 
@@ -46570,7 +46570,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarControl: {fileID: 344345238}
-  AICarControl: {fileID: 524415778}
+  AICarControl1: {fileID: 524415778}
+  AICarControl2: {fileID: 2012414603}
+  AICarControl3: {fileID: 1858883591}
 --- !u!4 &1677458454 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 397754956270439707, guid: f1a85f852a83aad4d9ceccf7929b3513,
@@ -48719,7 +48721,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767363759}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad5af527946a2314683da5992eba6bad, type: 3}
   m_Name: 
@@ -51405,7 +51407,7 @@ GameObject:
   - component: {fileID: 1858883593}
   - component: {fileID: 1858883592}
   m_Layer: 0
-  m_Name: Opponent_Car_1 (2)
+  m_Name: Opponent_Car_3
   m_TagString: Opponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51426,7 +51428,7 @@ MonoBehaviour:
   wayPoints: {fileID: 1630731124}
   centerOfMass: {x: 0, y: 0.5, z: 0}
   maxSteerAngle: 45
-  maxTorque: 470
+  maxTorque: 450
   currentSpeed: 0
   topSpeed: 120
   decelerationSpeed: 25
@@ -51505,7 +51507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858883591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 103.8, y: 0, z: -8.4}
+  m_LocalPosition: {x: 103.8, y: 0, z: -18.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1859655456}
@@ -55163,7 +55165,7 @@ GameObject:
   - component: {fileID: 2012414605}
   - component: {fileID: 2012414604}
   m_Layer: 0
-  m_Name: Opponent_Car_1 (1)
+  m_Name: Opponent_Car_2
   m_TagString: Opponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55184,7 +55186,7 @@ MonoBehaviour:
   wayPoints: {fileID: 1630731124}
   centerOfMass: {x: 0, y: 0.5, z: 0}
   maxSteerAngle: 45
-  maxTorque: 470
+  maxTorque: 450
   currentSpeed: 0
   topSpeed: 120
   decelerationSpeed: 25
@@ -55263,7 +55265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012414603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.32901, y: 0, z: -8.4}
+  m_LocalPosition: {x: 100.32901, y: 0, z: -18.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 333828018}

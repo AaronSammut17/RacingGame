@@ -9,6 +9,7 @@ public class CameraStable : MonoBehaviour
     public float CarY;
     public float CarZ;
     
+    //retains steady but fluid driving camera angle
     void Update(){
         CarX = PlayerCar.transform.eulerAngles.x;
         CarY = PlayerCar.transform.eulerAngles.y;

@@ -10,7 +10,7 @@ public class ChaseGameOverManager : MonoBehaviour
     public GameObject LoseUI;
 
     void OnTriggerEnter (Collider other){
-            if (other.CompareTag("Player")){
+            if (other.CompareTag("Player")){ //player ground collision/falling condition
                 CarControllerChase wheelsPlayer = other.GetComponent<CarControllerChase>();
                 wheelsPlayer.WheelRearLeftCol.motorTorque = 0;
                 wheelsPlayer.WheelRearRightCol.motorTorque = 0;
@@ -19,7 +19,7 @@ public class ChaseGameOverManager : MonoBehaviour
                 LoseUI.SetActive (true);
         } 
 
-                if((other.CompareTag("Opponent"))){
+                if((other.CompareTag("Opponent"))){ //opponent player collision/caught condition
                 NewControllerChase wheelsPolice = other.GetComponent<NewControllerChase>();
                 wheelsPolice.WheelRearLeftCol.motorTorque = 0;
                 wheelsPolice.WheelRearRightCol.motorTorque = 0;

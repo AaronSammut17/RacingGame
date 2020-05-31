@@ -7650,7 +7650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &152128621
 Transform:
   m_ObjectHideFlags: 0
@@ -19911,7 +19911,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373201828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.839005, y: 0.101, z: -21.2}
+  m_LocalPosition: {x: 65.839005, y: 0.101, z: -26.499998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1098240576}
@@ -19939,7 +19939,7 @@ GameObject:
   - component: {fileID: 373850696}
   - component: {fileID: 373850695}
   m_Layer: 0
-  m_Name: Opponent_Car_1 (1)
+  m_Name: Opponent_Car_2
   m_TagString: Opponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19960,10 +19960,10 @@ MonoBehaviour:
   wayPoints: {fileID: 437779765}
   centerOfMass: {x: 0, y: 0.5, z: 0}
   maxSteerAngle: 45
-  maxTorque: 570
+  maxTorque: 550
   currentSpeed: 0
   topSpeed: 150
-  decelerationSpeed: 30
+  decelerationSpeed: 31
   WheelFrontLeftCol: {fileID: 372103761}
   WheelFrontRightCol: {fileID: 94785169}
   WheelRearLeftCol: {fileID: 861046815}
@@ -20039,7 +20039,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373850694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.839005, y: 0.101, z: -27.2}
+  m_LocalPosition: {x: 65.839005, y: 0.101, z: -34.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 81062587}
@@ -48450,7 +48450,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 608dd384be908c546b9304110ba501b3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 349ff3878746c1e47b6b6800460398c8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -53388,7 +53388,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014058610}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad5af527946a2314683da5992eba6bad, type: 3}
   m_Name: 
@@ -66178,7 +66178,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259734839}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1259734841
 Camera:
   m_ObjectHideFlags: 0
@@ -72314,7 +72314,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407725364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad5af527946a2314683da5992eba6bad, type: 3}
   m_Name: 
@@ -72423,7 +72423,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409278672}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad5af527946a2314683da5992eba6bad, type: 3}
   m_Name: 
@@ -80245,7 +80245,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cbb7353230f1f1c4bb962768fbc06b42, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -92973,7 +92973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1764982580
 Transform:
   m_ObjectHideFlags: 0
@@ -94716,7 +94716,7 @@ MonoBehaviour:
   RearRightWheel: {fileID: 206547584}
   centerOfMass: {x: 0, y: 0.5, z: 0}
   topSpeed: 150
-  maxTorque: 550
+  maxTorque: 600
   maxSteerAngle: 45
   currentSpeed: 0
   maxBrakeTorque: 1000
@@ -94789,7 +94789,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796457448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 69.32, y: 0.101, z: -21.2}
+  m_LocalPosition: {x: 69.32, y: 0.101, z: -26.499998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 374708426}
@@ -98365,7 +98365,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarControl: {fileID: 1796457448}
-  AICarControl: {fileID: 373201828}
+  AICarControl1: {fileID: 373201828}
+  AICarControl2: {fileID: 373850694}
+  AICarControl3: {fileID: 1992189490}
 --- !u!4 &1880264710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8822636336882126325, guid: 6e78c73d0c22422438a45bea2842fcfb,
@@ -104886,7 +104888,7 @@ GameObject:
   - component: {fileID: 1992189492}
   - component: {fileID: 1992189491}
   m_Layer: 0
-  m_Name: Opponent_Car_1 (2)
+  m_Name: Opponent_Car_3
   m_TagString: Opponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104907,10 +104909,10 @@ MonoBehaviour:
   wayPoints: {fileID: 437779765}
   centerOfMass: {x: 0, y: 0.5, z: 0}
   maxSteerAngle: 45
-  maxTorque: 570
+  maxTorque: 550
   currentSpeed: 0
   topSpeed: 150
-  decelerationSpeed: 30
+  decelerationSpeed: 31
   WheelFrontLeftCol: {fileID: 171540401}
   WheelFrontRightCol: {fileID: 8922743}
   WheelRearLeftCol: {fileID: 964728911}
@@ -104986,7 +104988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992189490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 69.32, y: 0.101, z: -27.2}
+  m_LocalPosition: {x: 69.32, y: 0.101, z: -34.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 384111258}

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CarController : MonoBehaviour
 {
-
+    // player car controller for tracks 1-3
     public AudioSource CarAccelerate;
     public AudioSource CarDecelerate;
     public AudioSource CarIdle;
@@ -98,7 +98,7 @@ public class CarController : MonoBehaviour
     {
         calcWaypoint();
 
-        if(Input.GetKeyDown("r")){
+        if(Input.GetKeyDown("r")){ //manual respawn function
             Respawn();  
         }
 
@@ -128,7 +128,7 @@ public class CarController : MonoBehaviour
 
     }
 
-    void getWaypoint()
+    void getWaypoint() //traverses through array children for waypoint positions
     {
         Transform[] childObjects = wayPoints.GetComponentsInChildren<Transform>();
 
@@ -140,7 +140,7 @@ public class CarController : MonoBehaviour
         }
     }
 
-    void calcWaypoint()
+    void calcWaypoint() //incremements variable to next waypoint position
     {
         Vector3 steerVector = transform.InverseTransformPoint(new Vector3(waypoint[currentWaypoint].position.x, transform.position.y, waypoint[currentWaypoint].position.z));
         
@@ -154,7 +154,7 @@ public class CarController : MonoBehaviour
             currentWaypoint = 0;
         }
     }
-    public void Respawn()
+    public void Respawn() //respawns at last completed waypoint
     {
         currentSpeed = 0f;
         WheelRearLeftCol.motorTorque = 0;

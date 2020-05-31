@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewControllerChase : MonoBehaviour
 {
-
+    // opponent car controller solely for track 4/chase mode
     public Transform playerPos;
     public Vector3 centerOfMass;
 

@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/aaron/OneDrive/Desktop/RacingGame/Synthdrive_Build/Synthdrive.exe
+C:/Users/aaron/OneDrive/Desktop/RacingGame/Sythdrive_finalbuild/Synthdrive.exe
 SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/Instructions.unity

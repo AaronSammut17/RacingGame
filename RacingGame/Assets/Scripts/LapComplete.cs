@@ -98,7 +98,7 @@ public class LapComplete : MonoBehaviour
             // if AI1 makes a lap
             if (other.CompareTag("Opponent1")) {
                 AI1LapsDone += 1;   
-                if (AI1LapsDone == 9){
+                if (AI1LapsDone == 12){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
@@ -108,7 +108,7 @@ public class LapComplete : MonoBehaviour
             // if AI2 makes a lap
             if (other.CompareTag("Opponent2")) {
                 AI2LapsDone += 1;   
-                if (AI1LapsDone == 9){
+                if (AI1LapsDone == 12){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
@@ -118,7 +118,7 @@ public class LapComplete : MonoBehaviour
             // if AI3 makes a lap
             if (other.CompareTag("Opponent3")) {
                 AI3LapsDone += 1;   
-                if (AI3LapsDone == 9){
+                if (AI3LapsDone == 12){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
@@ -189,7 +189,7 @@ public class LapComplete : MonoBehaviour
             // if AI1 makes a lap
             if (other.CompareTag("Opponent1")) {
                 AI1LapsDone += 1;   
-                if (AI1LapsDone == 9){
+                if (AI1LapsDone == 12){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
@@ -199,7 +199,7 @@ public class LapComplete : MonoBehaviour
             // if AI2 makes a lap
             if (other.CompareTag("Opponent2")) {
                 AI2LapsDone += 1;   
-                if (AI1LapsDone == 9){
+                if (AI1LapsDone == 12){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;
@@ -209,7 +209,7 @@ public class LapComplete : MonoBehaviour
             // if AI3 makes a lap
             if (other.CompareTag("Opponent3")) {
                 AI3LapsDone += 1;   
-                if (AI3LapsDone == 9){
+                if (AI3LapsDone == 12){
                     
                     RaceFinish.SetActive (true);
                     LapsDone = 0;

@@ -58,7 +58,7 @@ public class NewController : MonoBehaviour
         getSteer();
         Move();
 
-        if(rigidSpeed < 0.001f){
+        if(rigidSpeed < 0.01f){
             Respawn();
         }
 
